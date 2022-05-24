@@ -1,4 +1,7 @@
 transformers
-torch
 six
 regex
+-i https://download.pytorch.org/whl/cu113 
+torch 
+torchvision 
+torchaudio
