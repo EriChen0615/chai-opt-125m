@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: eric-opt-125m-deployment
+  name: eric-opt-deployment-30b
 spec:
   selector:
     matchLabels:
@@ -12,9 +12,16 @@ spec:
       labels:
         app: eric-take-home-trial
     spec:
-     containers:
-     - name: eric-opt-125m-64 
-       image: erichen0615/opt-125m-x86
-       imagePullPolicy: Always
-      #  ports:
-      #  - containerPort: 8080
+      containers:
+      - name: eric-opt-30b 
+        image: erichen0615/opt-30b-v1
+        imagePullPolicy: Always
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: gpu.nvidia.com/class
+                operator: In
+                values:
+                  - A40

@@ -2,7 +2,7 @@ from transformers import pipeline, set_seed
 
 set_seed(32)
 
-opt_generator = pipeline('text-generation', model="facebook/opt-125m")
+opt_generator = pipeline('text-generation', model="facebook/opt-30b")
 # while True:
 # prompt = input("Please enter input(empty to exit): ")
 prompt = "Hello!"

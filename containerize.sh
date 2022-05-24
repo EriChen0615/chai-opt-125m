@@ -1,6 +1,6 @@
 #!/bin/bash
 
-CONTAINER_NAME="opt-125m-x86-v1"
+CONTAINER_NAME="opt-30b-v1"
 DOCKER_HUB="erichen0615"
 PLATFORM_ARG="linux/amd64"
 
@@ -10,7 +10,7 @@ echo $CONTAINER_NAME "Built image " $CONTAINER_NAME " for platform " $PLATFORM_A
 
 function getImageId() 
 {
-    docker images --format="{{.Repository}} {{.ID}}" |
+    docker images --format="{{.Repository}} {{.ID}}"|
     grep $CONTAINER_NAME |
     cut -d' ' -f2
 }
