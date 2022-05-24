@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: eric-opt-125m-deployment
+spec:
+  selector:
+    matchLabels:
+      app: eric-take-home-trial
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: eric-take-home-trial
+    spec:
+     containers:
+     - name: eric-opt-125m-64 
+       image: erichen0615/opt-125m-x86
+       imagePullPolicy: Always
+      #  ports:
+      #  - containerPort: 8080
